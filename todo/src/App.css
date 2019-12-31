@@ -7,6 +7,17 @@ body{
   flex-direction: column;
   align-items: center;
   padding-top: 100px;
+  background-image: url("https://images.fineartamerica.com/images-medium-large-5/wood-texture-plank-grain-background-wooden-desk-table-or-floor-old-striped-timber-board-dmitr1ch.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-position: center center; 
+  height: 100vh;
+  width: 100%;
+}
+
+h1{
+  color:whitesmoke;
 }
 
 .input{
@@ -34,6 +45,7 @@ body{
   margin: 10px 0px;
   display:flex;
   justify-content: space-between;
+  color: whitesmoke;
 }
 
 ul{
