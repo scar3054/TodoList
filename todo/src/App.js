@@ -3,6 +3,9 @@ import Button from './components/Button';
 import "./App.css";
 import Todo from "./components/Todo";
 
+/**
+ * Costruttore iniziale più inizializzazione degli stati
+ */
 class App extends Component {
   constructor(props){
     super(props);
@@ -14,13 +17,22 @@ class App extends Component {
       list:[]
     }
   }
-
+/**
+ * 
+ * @param {*} key ogni volta viene dato un nuovo id o key al TODO.
+ * @param {*} value ogni volta viene dato un nuovo value al TODO.
+ */
   aggiornaInput(key,value){
     this.setState({
       [key]: value
     });
   }
-
+/**
+ * Funzione che mi permette di aggiungere un todo alla lista;
+ * l'if controlla se l'utente sta tentando di aggiungere un TODO vuoto,in caso affermativo lancia il messaggio "Non puoi aggiungere un todo vuoto!"
+ * ogni TODO ha un value in modo che un TODO non sovrascriva un TODO già esistente e un' id generato randomicamente.
+ * la lista viene copiata in list e viene aggiunto il nuovo item alla lista,infine lo stato viene risettato;
+ */
   aggiungiItem(){
 
     if(this.state.newItem.length == 0){
@@ -43,7 +55,11 @@ class App extends Component {
       newItem:""
     });
   }
-
+/**
+ * la lista viene copiata in list.
+ * updateList aggiorna la lista filtrando i TODO selezionati da rimuovere e lasciando quelli che hanno id diverso dall'id del TODO che si vuole rimuovere.
+ * @param {*} id gli viene passata alla funzione l'id tel TODO da rimuovere.
+ */
   eliminaItem(id){
     const list = [...this.state.list];
 
@@ -51,7 +67,11 @@ class App extends Component {
 
     this.setState({list: updatedList});
   }
-
+/**
+ * 
+ * @param {*} target TODO in cui si è verificato l'evento.
+ * se il TODO è stato completato e quindi la checkbox è stata selezionata allora i TODO la cui checkbox è spuntata diventeranno selected.
+ */
   selezionaItem(target){
     if(target.checked == true){
       const list = [...this.state.selected];

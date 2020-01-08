@@ -1,6 +1,12 @@
 import React from 'react';
 import Button from './Button';
 
+/**
+ * componente TODO che mi consente di creare una checkbox accanto a ogni TODO.
+ * verificare se è selezionata e in caso affermativo verrà sbarrata.
+ * consente di rimuovere il singolo TODO.
+ */
+
 class Todo extends React.Component{
   render(){
     return(
